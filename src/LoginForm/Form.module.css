@@ -6,7 +6,12 @@
     justify-content: center; 
     align-items: center; 
     height: 50%;
-    background-color: #f0f0f0;
+    background-color: red;
     padding: 20px;
     border: 2px solid black ;
+}
+
+.formContainer p{
+    color: white;
+    font-size: 20px;
 }
