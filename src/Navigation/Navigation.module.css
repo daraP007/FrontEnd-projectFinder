@@ -1,0 +1,44 @@
+.nav {
+    background-color: rgb(247, 247, 247);
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.nav ol {
+    text-align: right;
+    padding: 0;
+    margin: 20px;
+    overflow: hidden;
+    gap: 2rem;
+    
+}
+.nav li {
+    display: inline;
+    margin-left: 30px;
+}
+  
+.nav a {
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    color: lightgreen;
+}
+  
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.name{
+    text-align: left;
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    display: flex;
+    margin-left: 25px;
+}
