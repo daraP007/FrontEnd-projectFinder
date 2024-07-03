@@ -1,5 +1,79 @@
-.h1{
-    text-align: center;
-    font-size: 8em;
-    color: blueviolet;
+.heroContainer{
+    display: flex;
+    align-items: center;
+    height: 80vh;
+    
+}
+
+.content{
+    justify-content: left;
+    padding: 20px;
+    font-size: 1.5rem;
+    width: 40%;
+    height: auto;
+    margin-left: 100px;
+}
+
+.content h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.content p {
+    white-space: normal;
+}
+
+.imageContainer{
+    justify-content: right;
+    padding: 20px;
+    margin-left: 250px;
+}
+
+.imageContainer img{
+    margin-top: 50px;
+    height: 600px;
+    width: auto;
+    border-radius: 25%;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+.aboutMeContainer{
+    background-color: white; 
+    height: 40vh;
+    border: 1px black solid;
+    margin-top: 150px;
+    align-items: center;
+    display: flex;
+    padding: 100px;
+}
+.aboutMeImageContainer{
+    justify-content: right;
+    padding: 20px;
+    margin-left: 250px;
+    width: auto;
+}
+
+.aboutMeImageContainer img{
+    height: 600px;
+    width: auto;
+    border-radius: 25%;
+
+}
+
+.aboutContent{
+    justify-content: left;
+    padding: 20px;
+    font-size: 1.5rem;
+    width: 40%;
+    height: auto;
+    margin-left: 80px;
+    margin-bottom: 60px;
+}
+
+.aboutContent p {
+    white-space: normal;
+    text-indent: 40px;
 }
