@@ -6,7 +6,7 @@ function LandingPage(){
     const [currentHeader, setHeader] = useState('');
 
     useEffect(() => {
-        const text = "Welcome to Phay Study!";
+        const text = "Welcome to Phay Group Project!";
         let index = 0;
 
         const interval = setInterval (() => {
@@ -27,9 +27,9 @@ function LandingPage(){
         <div className= {style.heroContainer}>
             <div className= {style.content}>
                 <h1>{currentHeader}</h1>
-            <p>This site is dedicated to <b>Computer Science Metro student </b> to help guide them to prepare for their classes
-            and their future. This Website will have a bunch of resource link for you to go to when you need help. Even with a guideline to help you prepare for 
-            your career. This is currently still in the works. I hope to this site will help you in your education and career.
+            <p>This site is dedicated to <b>Computer Science Metro student </b> to help guide them to prepare for their careers. This Website is dedicated to help students
+            group up with other students to create personal projects. Sometimes it can be difficult to start a project by yourself. However, it can be easier to start together with other people.
+            People can published their project ideas and students can request if they can join. This can help you learn new languages and new frameworks.<b> So Sign up now and Get Started!</b>
              </p>
             </div>
             <div className= {style.imageContainer}>
