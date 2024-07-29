@@ -4,8 +4,7 @@ import LandingPage from "./LandingPage/LandingPage";
 import Community from "./Community/Community";
 import LoginForm from "./Forms/LoginForm";
 import SignUpForm from "./Forms/SignUp";
-import RoadMap from "./RoadMap/RoadMap";
-
+import CreateGroup from "./LookingForGroupPage/LookingForGroup";
 function App() {
   
   return (
@@ -15,7 +14,7 @@ function App() {
           <Navigation />
           <Routes>
             <Route exact path="/" element={<LandingPage/>} />
-            <Route path="/RoadMap" element={<RoadMap />} />
+            <Route path="/LFG" element={<CreateGroup/>} />
             <Route path="/community" element={<Community />} />
             <Route path="/signup" element={<SignUpForm />} />
             <Route path="/login" element={<LoginForm />} />

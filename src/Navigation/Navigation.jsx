@@ -15,12 +15,6 @@ function Navigation() {
             <Link to="/LFG">LFG</Link>
           </li>
           <li>
-            <Link to="/roadMap">Road Map</Link>
-          </li>
-          <li>
-            <Link to="/Community">Community</Link>
-          </li>
-          <li>
             <Link to="/signup">Sign up</Link>
           </li>
           <li>
