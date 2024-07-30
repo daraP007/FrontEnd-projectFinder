@@ -1,5 +1,61 @@
 .title{
+    margin-top: 100px;
     text-align: center;
-    font-size: 6em;
+    font-size: 4em;
     color: blueviolet;
 }
+
+.createButton{
+    background-color: rgb(127, 228, 127);
+    height: 100px;
+    width: 800px;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.formContainer{
+    margin: auto;  
+    padding: 20px;
+    width: 1000px;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    height: 800px;
+    background-color: rgb(219, 207, 241);
+    border: 2px solid black ;
+    border-radius: 20px;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.inputContainer input{
+    font-size: 1em;
+    width: 800px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.inputContainer textArea{
+    height: 20vh;
+    width: 25vw;
+}
+
+
+
+
