@@ -1,18 +1,23 @@
 import style from "./Form.module.css";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
-    const user = [email, password];
+    e.preventDefault();
+    const user = {email, password};
 
     console.log(user.email);
     console.log(user.password);
 
     try {
-      const response = await fetch("http://localhost:8080/user/retrieve", {
+      const response = await fetch("http://localhost:8080/api/auth/authenticate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,8 +28,10 @@ function LoginForm() {
       console.log(user);
 
       if (response.ok) {
-        alert(user);
-        alert("User is login");
+        const data = await response.json();
+        sessionStorage.setItem('token',data.token);
+        sessionStorage.setItem('member',JSON.stringify(data.member));
+        navigate("/");
       } else {
         alert("failed to login");
       }
