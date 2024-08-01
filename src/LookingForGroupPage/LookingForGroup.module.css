@@ -7,8 +7,8 @@
 
 .createButton{
     background-color: rgb(127, 228, 127);
-    height: 100px;
-    width: 800px;
+    height: 80px;
+    width: 700px;
     justify-content: center;
     text-align: center;
     font-size: 1.5em;
@@ -26,7 +26,7 @@
 .formContainer{
     margin: auto;  
     padding: 20px;
-    width: 1000px;
+    width: 800px;
     justify-content: center; 
     align-items: center; 
     text-align: center;
@@ -47,7 +47,7 @@
 
 .inputContainer input{
     font-size: 1em;
-    width: 800px;
+    width: 500px;
     font-family: 'Courier New', Courier, monospace;
 }
 
