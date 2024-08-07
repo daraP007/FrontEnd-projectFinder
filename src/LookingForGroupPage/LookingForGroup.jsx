@@ -13,41 +13,37 @@ function CreateGroup() {
   const [frontFramework, setFontFramework] = useState("");
   const [backFramework, setBackFramework] = useState("");
 
-
-  const handleChange = (e) => {
-    setTitle(e.target.value);
-    setDescription(e.target.value);
-    setAuthor(e.target.value);
-    setLanguageOne(e.target.value);
-    setLanguageTwo(e.target.value);
-    setLanguageThree(e.target.value);
-    setLanguageFour(e.target.value);
-    setLanguageFive(e.target.value);
-    setFontFramework(e.target.value);
-    setBackFramework(e.target.value);
-  };
-  const handleSubmit = async (e) => {
-    const project = {title,description,author,languageOne,languageTwo,languageThree,languageFour,languageFive,frontFramework,backFramework};
-    try{
-      const response = await fetch('http://localhost:8080/api/project' , {
-        method: 'POST',
-        headers:{
-          'Content-Type': 'application/json'
-      },
-      body:JSON.stringify(project),
-      })
-      if (response.ok){
-        alert("Sign up successful");
-    }else{
-        alert("Error: Sign up unsuccesful");
-    }
-}catch (e){
-    console.log(e);
-}
-    
-  };
   
-
+  const handleSubmit = async (e) => {
+    const project = {
+      title,
+      description,
+      author,
+      languageOne,
+      languageTwo,
+      languageThree,
+      languageFour,
+      languageFive,
+      frontFramework,
+      backFramework,
+    };
+    try {
+      const response = await fetch("http://localhost:8080/api/project", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(project),
+      });
+      if (response.ok) {
+        alert("Sign up successful");
+      } else {
+        alert("Error: Sign up unsuccesful");
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>
@@ -59,18 +55,36 @@ function CreateGroup() {
       <form action={handleSubmit} className={style.formContainer}>
         <h2>Create Post</h2>
         <div className={style.inputContainer}>
-          <input type="text" placeholder="enter Title" value = {title} onChange={handleChange}/>
+          <input
+            type="text"
+            placeholder="enter Title"
+            value={title}
+            onChange= {(e) => setTitle(e.target.value)}
+          />
         </div>
         <div className={style.inputContainer}>
-          <input type="text" placeholder="enter your name" value = {author} onChange={handleChange} />
+          <input
+            type="text"
+            placeholder="enter your name"
+            value={author}
+            onChange= {(e) => setAuthor(e.target.value)}
+          />
         </div>
         <div className={style.inputContainer}>
-          <textarea placeholder="enter description" value ={description} onChange={handleChange}></textarea>
+          <textarea
+            placeholder="enter description"
+            value={description}
+            onChange= {(e) => setDescription(e.target.value)}
+          ></textarea>
         </div>
 
         <label>Programming languages requirement:</label>
         <div className={style.inputContainer}>
-          <select onChange = {handleChange} value = {languageOne} >
+          <select
+            onChange={(e) => setLanguageOne(e.target.value)}
+            value={languageOne}
+            className={style.option}
+          >
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
@@ -80,7 +94,11 @@ function CreateGroup() {
           </select>
         </div>
         <div className={style.inputContainer}>
-          <select onChange = {handleChange} value={languageTwo}>
+          <select
+            onChange= {(e) => setLanguageTwo(e.target.value)}
+            value={languageTwo}
+            className={style.option}
+          >
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
@@ -90,7 +108,11 @@ function CreateGroup() {
           </select>
         </div>
         <div className={style.inputContainer}>
-          <select onChange = {handleChange} value={languageThree}>
+          <select
+            onChange= {(e) => setLanguageThree(e.target.value)}
+            value={languageThree}
+            className={style.option}
+          >
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
@@ -100,7 +122,11 @@ function CreateGroup() {
           </select>
         </div>
         <div className={style.inputContainer}>
-          <select onChange = {handleChange} value={languageFour}>
+          <select
+            onChange= {(e) => setLanguageFour(e.target.value)}
+            value={languageFour}
+            className={style.option}
+          >
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
@@ -109,8 +135,12 @@ function CreateGroup() {
             <option value="C++">C++</option>
           </select>
         </div>
-        <div className={style.inputContainer} >
-          <select onChange = {handleChange} value={languageFive}>
+        <div className={style.inputContainer}>
+          <select
+            onChange= {(e) => setLanguageFive(e.target.value)}
+            value={languageFive}
+            className={style.option}
+          >
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
@@ -120,25 +150,33 @@ function CreateGroup() {
           </select>
         </div>
 
-        <label >FrontEnd Framework:</label>
-        <div className={style.inputContainer} >
-        <select onChange = {handleChange} value={frontFramework}>
-          <option value="React">React</option>
-          <option value="Angular">Angular</option>
-        </select>
+        <label>FrontEnd Framework:</label>
+        <div className={style.inputContainer}>
+          <select
+            onChange= {(e) => setFontFramework(e.target.value)}
+            value={frontFramework}
+            className={style.option}
+          >
+            <option value="React">React</option>
+            <option value="Angular">Angular</option>
+          </select>
         </div>
 
-        <label >BackEnd Framework:</label>
-        <div className={style.inputContainer} >
-        <select onChange = {handleChange} value={backFramework}>
-          <option value="HTML">Springboot</option>
-          <option value="Django">Django</option>
-          <option value="Flask">Flask</option>
-          <option value="Express.js">Express.js</option>
-        </select>
+        <label>BackEnd Framework:</label>
+        <div className={style.inputContainer}>
+          <select
+            onChange= {(e) => setBackFramework(e.target.value)}
+            value={backFramework}
+            className={style.option}
+          >
+            <option value="HTML">Springboot</option>
+            <option value="Django">Django</option>
+            <option value="Flask">Flask</option>
+            <option value="Express.js">Express.js</option>
+          </select>
         </div>
 
-        <button type= "submit" >Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </>
   );

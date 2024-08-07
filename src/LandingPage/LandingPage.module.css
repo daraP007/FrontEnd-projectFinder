@@ -77,3 +77,77 @@
     white-space: normal;
     text-indent: 40px;
 }
+
+
+
+
+@media (min-width: 600px) {
+    .heroContainer{
+        display: flex;
+        align-items: center;
+        height: 110vh;
+        
+    }
+    
+    .content{
+        justify-content: left;
+        padding: 10px;
+        font-size: 1.2rem;
+        width: 40%;
+        height: auto;
+        margin-left: 80px;
+    }
+
+    .imageContainer{
+        justify-content: right;
+        padding: 20px;
+        margin-left: 180px;
+    }
+    
+    .imageContainer img{
+        margin-top: 50px;
+        height: 450px;
+        width: auto;
+        border-radius: 25%;
+    }
+
+    .aboutMeContainer{
+        background-color: white; 
+        height: 80vh;
+        border: 1px black solid;
+        margin-top: 150px;
+        align-items: center;
+        display: flex;
+        padding: 100px;
+    }
+
+    .aboutMeImageContainer{
+    justify-content: right;
+    padding: 20px;
+    height: 10x;
+    margin-left: 200px;
+    width: auto;
+    }
+
+    .aboutMeImageContainer img{
+        height: 550px;
+        width: auto;
+        border-radius: 25%;
+    
+    }
+
+    .aboutContent p {
+        white-space: normal;
+        text-indent: 10px;
+    }
+
+    .aboutContent{
+        justify-content: left;
+        padding: 5px;
+        font-size: 1em;
+        width: 80%;
+        height: auto;
+        margin-left: 80px;
+        margin-bottom: 60px;
+    }
+}
