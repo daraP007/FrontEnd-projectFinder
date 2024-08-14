@@ -17,7 +17,7 @@ function LoginForm() {
     console.log(user.password);
 
     try {
-      const response = await fetch("http://localhost:8080/api/auth/authenticate", {
+      const response = await fetch("http://localhost:8080/api/member/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,8 +29,7 @@ function LoginForm() {
 
       if (response.ok) {
         const data = await response.json();
-        sessionStorage.setItem('token',data.token);
-        sessionStorage.setItem('member',JSON.stringify(data.member));
+        sessionStorage.setItem('user',JSON.stringify(data));
         navigate("/");
       } else {
         alert("failed to login");

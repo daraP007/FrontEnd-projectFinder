@@ -1,10 +1,18 @@
 import style from "./Navigation.module.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navigation() {
-  const token = sessionStorage.getItem('token');
-  const member = JSON.parse(sessionStorage.getItem('member'));
+  const token = sessionStorage.getItem("token");
+  const user = JSON.parse(sessionStorage.getItem("user"));
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("user");
+    navigate("/");
+  };
+
   return (
     <>
       <nav className={style.nav}>
@@ -16,34 +24,23 @@ function Navigation() {
           <li>
             <Link to="/LFG">LFG</Link>
           </li>
-          {token ? (
-          <>
-            <li>
-              <Link to="/profile">Profile</Link> {/* Example profile link */}
-            </li>
-            <li>
-              <button onClick={() => {
-                localStorage.removeItem('token');
-                localStorage.removeItem('member');
-                window.location.reload(); // Or use a navigation hook to redirect
-              }}>Logout</button>
-            </li>
-            <li>
-              <span>Hi {member?.firstName}</span> {/* Display user's first name */}
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
-              <Link to="/signup">Sign up</Link>
-            </li>
+          <li>
+            <Link to="/signup">Sign up</Link>
+          </li>
+          {user ? (
+            <>
+              <li>Hello,{user.userName}</li>
+              <li onClick={handleLogout} style={{ cursor: "pointer" }}>
+                Logout
+              </li>
+            </>
+          ) : (
             <li>
               <Link to="/login">Login</Link>
             </li>
-          </>
-        )}
-      </ol>
-    </nav>
+          )}
+        </ol>
+      </nav>
     </>
   );
 }
