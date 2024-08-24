@@ -2,9 +2,10 @@ import style from "./LookingForGroup.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import GroupCard from "./GroupCard";
 
 function FindGroup() {
-  const [project, setProject] = useState([]);
+  const [projectList, setProjectList] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -23,10 +24,10 @@ function FindGroup() {
               "Content-type": "application/json",
             },
           }
-        );
+        ); 
         if (response.ok) {
           const data = await response.json();
-          setProject(data);
+          setProjectList(data);
           setLoading(false);
         } else {
           console.log("can't retrieve all the projects");
@@ -46,8 +47,13 @@ function FindGroup() {
         <button className={style.createButton} onClick={handleButtonClick}>
           Create a post
         </button>
-        
-
+       
+      </div>
+      <input type="text" placeholder="search" />
+      <div className={style.projectListContainer} >
+        {projectList.map((project) => (
+          <GroupCard key={project.projectId} project={project} />
+        ))}
       </div>
     </>
   );

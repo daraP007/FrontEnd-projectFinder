@@ -9,7 +9,7 @@ function SignUpForm() {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-    const user = { firstName, lastName, userName, email, password ,memberId};
+    const user = { firstName, lastName, userName, email, password};
 
     try {
       const response = await fetch("http://localhost:8080/api/member/signup", {

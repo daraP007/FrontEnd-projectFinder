@@ -17,12 +17,76 @@
     margin: 30px;
 }
 
+.createButton:hover{
+    background-color: rgb(78, 236, 78);
+    cursor: pointer;
+}
+
 .container{
     display: flex;
     justify-content: center;
+}
+
+.projectListContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 23vw;
+    gap: 25px;
+}
+
+.projectContainer{
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 50vw;
+    padding: 20px;
+}
+
+.projectTitle{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
     text-align: center;
 }
 
+.projectAuthor{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.projectDescription{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.listContainer {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-position: inside;
+    column-count: 2;
+    justify-content: center;
+    margin-left: 240px;
+}
+
+.listContainer li {
+    break-inside: avoid;
+    padding: 5px;
+}
+
+.projectButton{
+    background-color: lightgreen;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.projectButton:hover{
+    background-color: rgb(78, 236, 78);
+   cursor: pointer;
+}
 
 
 
