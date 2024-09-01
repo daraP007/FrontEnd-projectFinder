@@ -24,7 +24,7 @@ function FindGroup() {
               "Content-type": "application/json",
             },
           }
-        ); 
+        );
         if (response.ok) {
           const data = await response.json();
           setProjectList(data);
@@ -42,15 +42,15 @@ function FindGroup() {
 
   return (
     <>
+    
       <h2 className={style.title}>Create your Post! Collaborate with others</h2>
       <div className={style.container}>
         <button className={style.createButton} onClick={handleButtonClick}>
           Create a post
         </button>
-       
       </div>
       <input type="text" placeholder="search" />
-      <div className={style.projectListContainer} >
+      <div className={style.projectListContainer}>
         {projectList.map((project) => (
           <GroupCard key={project.projectId} project={project} />
         ))}

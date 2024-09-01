@@ -1,7 +1,14 @@
 import React from "react";
 import style from "./LookingForGroup.module.css";
+import { useNavigate } from "react-router-dom";
 
 function GroupCard({project}) {
+  const navigate = useNavigate();
+
+  const handleClick = (() => {
+    navigate(`/postDetails/${project.projectId}`,{state: {project}});
+  })
+
   return (
     <div className={style.projectContainer}>
       <h2 className={style.projectTitle}>{project.title}</h2>
@@ -20,7 +27,7 @@ function GroupCard({project}) {
         </ul>
 
         <div className={style.container}>
-        <button className= {style.projectButton}>Collaborate</button>
+        <button className = {style.projectButton} onClick={handleClick}>Collaborate</button>
         </div>
     </div>
   );

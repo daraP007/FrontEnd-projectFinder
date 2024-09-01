@@ -1,0 +1,23 @@
+.commentContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form{
+    background-color: aliceblue;
+    border: 2px solid black;
+    width: 50vw;
+}
+
+.form textarea{
+    text-align: center;
+    width: 30vw;
+    border: none;
+    resize: none;
+}
+
+.form button{
+    margin: 10px;
+    width:100px;
+}
