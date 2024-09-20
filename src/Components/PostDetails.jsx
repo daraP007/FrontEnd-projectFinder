@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import style from "./PostDetails.module.css";
-import Comment from "../Comment/Comment";
+import style from "../styles/Components/PostDetails.module.css";
+import Comment from "../Components/Comment";
 
 function PostDetails() {
   const user = JSON.parse(sessionStorage.getItem("user"));

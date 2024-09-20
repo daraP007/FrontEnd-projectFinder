@@ -1,8 +1,8 @@
-import style from "./LookingForGroup.module.css";
+import style from "../styles/Pages/LookingForGroup.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import GroupCard from "./GroupCard";
+import GroupCard from "../Components/GroupCard";
 
 function FindGroup() {
   const [projectList, setProjectList] = useState([]);

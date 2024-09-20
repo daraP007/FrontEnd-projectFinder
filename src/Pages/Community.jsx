@@ -1,4 +1,4 @@
-import style from './Community.module.css';
+import style from '../styles/Pages/Community.module.css';
 
 function Community(){
     return(

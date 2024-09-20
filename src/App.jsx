@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navigation from "./Navigation/Navigation";
-import LandingPage from "./LandingPage/LandingPage";
-import Community from "./Community/Community";
-import LoginForm from "./Forms/LoginForm";
-import SignUpForm from "./Forms/SignUp";
-import CreateGroup from "./Forms/CreateGroupForm";
-import FindGroup from "./LookingForGroupPage/LookingForGroup";
-import PostDetails from "./LookingForGroupPage/PostDetails";
+import FindGroup from "./Pages/LookingForGroup";
+import PostDetails from "./Components/PostDetails";
+import CreateGroup from "./Components/CreateGroupForm";
+import Navigation from "./Components/Navigation";
+import LandingPage from "./Pages/LandingPage";
+import Community from "./Pages/Community";
+import LoginForm from "./Pages/LoginForm";
+import SignUpForm from "./Pages/SignUp";
+
+
 function App() {
   
   return (

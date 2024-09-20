@@ -1,4 +1,4 @@
-import style from "./Navigation.module.css";
+import style from "../styles/Components/Navigation.module.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";

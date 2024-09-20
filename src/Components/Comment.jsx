@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import style from "./Comment.module.css";
+import style from "../styles/Components/Comment.module.css";
 import { useParams } from "react-router-dom";
 
 function Comment({projectId}) {
   const user = JSON.parse(sessionStorage.getItem("user"));
-  const 
   
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async () => {
     
     try {
       const response = await fetch("http://localhost:8080/api/comment/addComment", {

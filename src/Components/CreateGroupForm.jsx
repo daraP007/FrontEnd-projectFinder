@@ -1,4 +1,4 @@
-import style from "./CreateGroupForm.module.css";
+import style from "../styles/Components/CreateGroupForm.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

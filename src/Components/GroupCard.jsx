@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./LookingForGroup.module.css";
+import style from "../styles/Pages/LookingForGroup.module.css";
 import { useNavigate } from "react-router-dom";
 
 function GroupCard({project}) {

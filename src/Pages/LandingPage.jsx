@@ -1,4 +1,4 @@
-import style from "./LandingPage.module.css";
+import style from "../styles/Pages/LandingPage.module.css";
 import { useEffect, useState } from "react";
 
 function LandingPage() {
