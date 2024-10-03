@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "../styles/Components/Comment.module.css";
 import { useParams } from "react-router-dom";
 
-function Comment({projectId}) {
+function CreateComment({projectId}) {
   const user = JSON.parse(sessionStorage.getItem("user"));
   
 
@@ -43,4 +43,4 @@ function Comment({projectId}) {
   );
 }
 
-export default Comment;
+export default CreateComment;
