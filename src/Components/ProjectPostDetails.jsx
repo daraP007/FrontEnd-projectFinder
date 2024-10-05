@@ -2,11 +2,14 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import style from "../styles/Components/PostDetails.module.css";
-import Comment from "../Components/Comment";
+import CreateComment from "./CreateComment";
+import GroupCard from "./GroupCard";
+import CommentCard from "./CommentCard";
 
-function PostDetails() {
+function ProjectPostDetails() {
   const user = JSON.parse(sessionStorage.getItem("user"));
   const [showComment, setShowComment] = useState(false);
+  const [commentList,setCommentList] = useState(null);
 
 
   const { id } = useParams();
@@ -15,20 +18,21 @@ function PostDetails() {
   const [error, setError] = useState(null);
   const projectId = parseInt(id, 10);
   const url = `http://localhost:8080/api/project/${projectId}`;
+  const urlTwo =`http://localhost:8080/api/comment/allComment/${projectId}`;
 
   useEffect(() => {
-    const fetchProject = async () => {
+    const fetchInfo = async () => {
       try {
-        const response = await fetch(url, {
-          method: "GET",
-          headers: {
-            "Content-type": "application/json",
-          },
-        });
+        const [projectResponse, commentResponse] = await Promise.all([
+          fetch(url), 
+          fetch(urlTwo)
+        ]);
 
-        if (response.ok) {
-          const data = await response.json();
-          setProject(data);
+        if (projectResponse.ok || commentResponse.ok) {
+          const projectData = await projectResponse.json();
+          const commentData = await commentResponse.json();
+          setProject(projectData);
+          setCommentList(commentData);
           setLoading(false);
         } else {
           setError("Couldn't get project");
@@ -38,8 +42,8 @@ function PostDetails() {
         console.log(e);
       }
     };
-    fetchProject();
-  }, [projectId]);
+    fetchInfo();
+  }, [projectId, url,urlTwo]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -49,11 +53,9 @@ function PostDetails() {
     return <div>{error}</div>;
   }
 
-  const handleClick = () => {
-    setShowComment(true);
-  };
   return (
     <>
+      
       <div className={style.layOut}>
         <div className={style.projectContainer}>
           <h2 className={style.projectTitle}>{project.title}</h2>
@@ -71,11 +73,19 @@ function PostDetails() {
           </ul>
         </div>
       </div>
+    
+      <CreateComment projectId = {projectId} /> 
 
-      <button onClick = {handleClick}>Comment on Post</button>
-      {showComment && <Comment projectId= {projectId}/>}
+      <div>
+        {commentList.map((comment) => (
+          <CommentCard key= {comment.commentId} comment = {comment}/>
+        ))}
+      </div>
+
+
+
     </>
   );
 }
 
-export default PostDetails;
+export default ProjectPostDetails;

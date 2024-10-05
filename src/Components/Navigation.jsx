@@ -24,9 +24,7 @@ function Navigation() {
           <li>
             <Link to="/LFG">LFG</Link>
           </li>
-          <li>
-            <Link to="/signup">Sign up</Link>
-          </li>
+
           {user ? (
             <>
               <li>Hello,{user.userName}</li>
@@ -35,9 +33,14 @@ function Navigation() {
               </li>
             </>
           ) : (
+            <>
+            <li>
+            <Link to="/signup">Sign up</Link>
+            </li>
             <li>
               <Link to="/login">Login</Link>
             </li>
+            </>
           )}
         </ol>
       </nav>

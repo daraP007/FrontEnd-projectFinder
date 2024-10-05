@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-function CreateGroup() {
+function CreateProjectPost() {
 const [title, setTitle] = useState("");
 const [description, setDescription] = useState("");
 const [author, setAuthor] = useState("");
@@ -173,4 +173,4 @@ return (
 );
 }
 
-export default CreateGroup;
+export default CreateProjectPost;
