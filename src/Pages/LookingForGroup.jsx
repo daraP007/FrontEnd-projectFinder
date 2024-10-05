@@ -5,12 +5,17 @@ import { useEffect } from "react";
 import GroupCard from "../Components/GroupCard";
 
 function FindGroup() {
+  const user = JSON.parse(sessionStorage.getItem("user"));
   const [projectList, setProjectList] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/createPost"); // Navigate to the new form page
+    if (user == null){
+      navigate("/login");
+    }else{
+      navigate("/createPost"); // Navigate to the new form page
+    }
   };
 
   useEffect(() => {

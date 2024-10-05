@@ -3,10 +3,15 @@ import style from "../styles/Pages/LookingForGroup.module.css";
 import { useNavigate } from "react-router-dom";
 
 function GroupCard({project}) {
+  const user = JSON.parse(sessionStorage.getItem("user"));
   const navigate = useNavigate();
 
   const handleClick = (() => {
+    if (user == null){
+      navigate("/login");
+    }else{
     navigate(`/postDetails/${project.projectId}`,{state: {project}});
+    }
   })
 
   return (
