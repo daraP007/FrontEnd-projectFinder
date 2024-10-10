@@ -88,6 +88,19 @@
    cursor: pointer;
 }
 
+.deleteButton{
+    background-color: rgb(238, 144, 144);
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.deleteButton:hover {
+    background-color: rgb(233, 75, 75);
+    cursor: pointer;
+}
+
 
 
 

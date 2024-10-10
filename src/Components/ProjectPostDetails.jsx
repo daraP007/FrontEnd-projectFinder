@@ -5,6 +5,7 @@ import style from "../styles/Components/PostDetails.module.css";
 import CreateComment from "./CreateComment";
 import GroupCard from "./GroupCard";
 import CommentCard from "./CommentCard";
+import DeleteProjectButton from "./DeleteProjectButton";
 
 function ProjectPostDetails() {
   const user = JSON.parse(sessionStorage.getItem("user"));
@@ -53,6 +54,15 @@ function ProjectPostDetails() {
     return <div>{error}</div>;
   }
 
+  
+  const handleButton = () =>{
+    if (showComment){
+      setShowComment(false);
+    }else{
+      setShowComment(true);
+    }
+  }
+
   return (
     <>
       
@@ -71,10 +81,13 @@ function ProjectPostDetails() {
             <li>{project.frontEndFramework}</li>
             <li>{project.backEndFramework}</li>
           </ul>
+          {(user && (user.role === "ADMIN" || user.memberId === project.memberId )) && <DeleteProjectButton project = {project} />}
         </div>
       </div>
-    
-      <CreateComment projectId = {projectId} /> 
+      <button onClick={handleButton}> Enter a comment </button> 
+    {showComment == true ? 
+    <CreateComment projectId = {projectId} /> 
+    : false};
 
       <div>
         {commentList.map((comment) => (

@@ -1,6 +1,8 @@
 import React from "react";
 import style from "../styles/Pages/LookingForGroup.module.css";
 import { useNavigate } from "react-router-dom";
+import { Button } from "bootstrap";
+import DeleteProjectButton from "./DeleteProjectButton";
 
 function GroupCard({project}) {
   const user = JSON.parse(sessionStorage.getItem("user"));
@@ -15,11 +17,11 @@ function GroupCard({project}) {
   })
 
   return (
+
     <div className={style.projectContainer}>
       <h2 className={style.projectTitle}>{project.title}</h2>
       <p className={style.projectAuthor}>{project.author}</p>
       <p className={style.projectDescription}>{project.description}</p>
-
      
       <label >Technology Stack:</label>
         <ul className= {style.listContainer}>
@@ -33,6 +35,8 @@ function GroupCard({project}) {
 
         <div className={style.container}>
         <button className = {style.projectButton} onClick={handleClick}>Collaborate</button>
+        {(user && user.role === "ADMIN" ) && <DeleteProjectButton project = {project} />}
+
         </div>
     </div>
   );

@@ -54,10 +54,9 @@ function FindGroup() {
           Create a post
         </button>
       </div>
-      <input type="text" placeholder="search" />
       <div className={style.projectListContainer}>
         {projectList.map((project) => (
-          <GroupCard key={project.projectId} project={project} />
+          <GroupCard key={project.projectId} project={project}  />
         ))}
       </div>
     </>
